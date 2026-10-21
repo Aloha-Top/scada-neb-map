@@ -6,57 +6,50 @@
   <title>ระบบสารสนเทศกลาง (Web Portal) — แผนกอุปกรณ์เชื่อมต่อโครงข่ายสื่อสาร (ผอส.) กฟฉ.2</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Anuphan:wght@300;400;500;600;700&family=IBM+Plex+Sans+Thai:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Sarabun:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     :root {
-      /* โทนสีหลัก: Enterprise Clean (PEA Purple + Deep Navy + Crisp White/Light Gray) */
-      --bg-page: #F8FAFC;
+      /* World-Class Minimalist Design System (PEA Identity) */
+      --font-sans: "Inter", "Anuphan", "IBM Plex Sans Thai", "Sarabun", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+
+      --bg-page: #F9FAFB;
       --bg-surface: #FFFFFF;
-      --bg-subtle: #F1F5F9;
-      --bg-glass: rgba(255, 255, 255, 0.88);
+      --bg-subtle: #F3F4F6;
+      --bg-muted-pill: #F8FAFC;
+      --bg-glass: rgba(255, 255, 255, 0.84);
 
-      --text-primary: #0F172A;
-      --text-secondary: #475569;
-      --text-muted: #64748B;
+      --text-primary: #090D16;
+      --text-secondary: #4B5563;
+      --text-muted: #9CA3AF;
 
-      --pea-purple: #6B21A8;
-      --pea-purple-dark: #581C87;
-      --pea-purple-light: #F3E8FF;
-      --pea-purple-border: #D8B4FE;
-      --pea-gold: #C59B27;
-      --pea-gold-soft: #FEF9C3;
+      --pea-purple: #6D28D9;
+      --pea-purple-dark: #5B21B6;
+      --pea-purple-light: #F5F3FF;
+      --pea-purple-border: rgba(109, 40, 217, 0.18);
+      --pea-gold: #D97706;
+      --pea-gold-soft: #FEF3C7;
 
-      --navy-primary: #16324F;
-      --navy-hover: #1E4268;
-      --navy-soft: #E8F0FE;
+      --navy-primary: #0F2942;
+      --navy-hover: #163A5F;
+      --navy-soft: #F0F6FC;
 
-      --teal-accent: #0D9488;
-      --teal-soft: #CCFBF1;
-      --blue-accent: #1D5FA8;
-      --blue-soft: #E0F2FE;
+      --border-hairline: rgba(15, 23, 42, 0.06);
+      --border-color: rgba(15, 23, 42, 0.075);
+      --border-hover: rgba(109, 40, 217, 0.26);
 
-      --border-color: #E2E8F0;
-      --border-hover: #CBD5E1;
-
-      --radius-xl: 20px;
-      --radius-lg: 16px;
-      --radius-md: 12px;
+      --radius-2xl: 22px;
+      --radius-xl: 18px;
+      --radius-lg: 14px;
+      --radius-md: 11px;
       --radius-sm: 8px;
 
-      --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.04);
-      --shadow-sm: 0 2px 8px -2px rgba(15, 23, 42, 0.06), 0 1px 3px -1px rgba(15, 23, 42, 0.04);
-      --shadow-md: 0 12px 28px -6px rgba(15, 23, 42, 0.08), 0 4px 12px -3px rgba(15, 23, 42, 0.04);
-      --shadow-lg: 0 20px 40px -12px rgba(107, 33, 168, 0.14), 0 8px 16px -6px rgba(15, 23, 42, 0.06);
+      --shadow-xs: 0 1px 2px rgba(15, 23, 42, 0.02);
+      --shadow-card: 0 1px 3px rgba(15, 23, 42, 0.02), 0 8px 24px -6px rgba(15, 23, 42, 0.035);
+      --shadow-search: 0 2px 6px rgba(15, 23, 42, 0.02), 0 10px 28px -6px rgba(15, 23, 42, 0.05);
+      --shadow-search-focus: 0 0 0 4px rgba(109, 40, 217, 0.08), 0 14px 34px -8px rgba(109, 40, 217, 0.12);
+      --shadow-hover: 0 4px 12px rgba(15, 23, 42, 0.03), 0 22px 48px -12px rgba(15, 23, 42, 0.08);
 
-      --transition: 0.22s cubic-bezier(0.22, 1, 0.36, 1);
-    }
-
-    body.theme-navy {
-      --pea-purple: #16324F;
-      --pea-purple-dark: #0F2437;
-      --pea-purple-light: #E8F0FE;
-      --pea-purple-border: #BFDBFE;
-      --shadow-lg: 0 20px 40px -12px rgba(22, 50, 79, 0.15), 0 8px 16px -6px rgba(15, 23, 42, 0.06);
+      --transition: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     * {
@@ -71,7 +64,7 @@
     }
 
     body {
-      font-family: "Sarabun", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-family: var(--font-sans);
       background-color: var(--bg-page);
       color: var(--text-primary);
       line-height: 1.6;
@@ -79,9 +72,10 @@
       display: flex;
       flex-direction: column;
       -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
       background-image:
-        radial-gradient(circle at 12% 0%, rgba(107, 33, 168, 0.045) 0%, transparent 38%),
-        radial-gradient(circle at 88% 8%, rgba(22, 50, 79, 0.045) 0%, transparent 38%);
+        radial-gradient(1000px 420px at 50% -60px, rgba(109, 40, 217, 0.045), transparent 70%);
     }
 
     button, input, select {
@@ -90,28 +84,29 @@
       color: inherit;
     }
 
-    /* ==================== TOP ACCENT BAR ==================== */
+    /* ==================== SUBTLE TOP ACCENT ==================== */
     .top-brand-strip {
-      height: 4px;
+      height: 2px;
       width: 100%;
-      background: linear-gradient(90deg, var(--pea-purple) 0%, #8B5CF6 45%, var(--pea-gold) 75%, var(--navy-primary) 100%);
+      background: linear-gradient(90deg, transparent 0%, var(--pea-purple) 35%, var(--navy-primary) 65%, transparent 100%);
+      opacity: 0.35;
     }
 
-    /* ==================== HEADER ==================== */
+    /* ==================== MINIMALIST HEADER ==================== */
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
       background: var(--bg-glass);
-      backdrop-filter: blur(14px);
-      -webkit-backdrop-filter: blur(14px);
-      border-bottom: 1px solid var(--border-color);
+      backdrop-filter: saturate(180%) blur(20px);
+      -webkit-backdrop-filter: saturate(180%) blur(20px);
+      border-bottom: 1px solid var(--border-hairline);
     }
 
     .header-container {
-      max-width: 1240px;
+      max-width: 1140px;
       margin: 0 auto;
-      padding: 16px 28px;
+      padding: 13px 28px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -121,290 +116,231 @@
     .brand-identity {
       display: flex;
       align-items: center;
-      gap: 16px;
+      gap: 13px;
       min-width: 0;
     }
 
-    /* Logo Placeholder Box */
-    .logo-placeholder {
+    /* Logo - Fixed (Non-clickable) */
+    .logo-container {
       position: relative;
-      width: 56px;
-      height: 56px;
-      flex: 0 0 56px;
-      border-radius: 14px;
-      background: linear-gradient(135deg, var(--pea-purple) 0%, var(--navy-primary) 100%);
+      width: 40px;
+      height: 40px;
+      flex: 0 0 40px;
+      border-radius: 11px;
+      background: #FFFFFF;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: #FFFFFF;
-      box-shadow: 0 4px 12px rgba(107, 33, 168, 0.18);
-      border: 2px solid #FFFFFF;
-      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(109, 40, 217, 0.2), inset 0 1px 0 rgba(255, 255, 255, 0.2);
       overflow: hidden;
-      transition: transform var(--transition), box-shadow var(--transition);
     }
 
-    .logo-placeholder:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 16px rgba(107, 33, 168, 0.25);
-    }
-
-    .logo-placeholder img {
+    .logo-container img {
       width: 100%;
       height: 100%;
       object-fit: contain;
-      background: #FFFFFF;
-      padding: 4px;
-      display: none;
-    }
-
-    .logo-placeholder.has-custom-logo img {
+      padding: 2px;
       display: block;
-    }
-
-    .logo-placeholder.has-custom-logo .logo-fallback-svg {
-      display: none;
-    }
-
-    .logo-fallback-svg {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      line-height: 1;
-      text-align: center;
-    }
-
-    .logo-fallback-svg span {
-      font-family: "Inter", sans-serif;
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.8px;
-      margin-top: 2px;
-      color: #FDE047;
     }
 
     .org-titles {
       min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
     }
 
     .org-badge-row {
       display: flex;
       align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 2px;
+      gap: 6px;
     }
 
     .org-code-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 5px;
-      font-size: 11.5px;
+      font-size: 14.5px;
       font-weight: 700;
-      letter-spacing: 0.3px;
       color: var(--pea-purple);
-      background: var(--pea-purple-light);
-      border: 1px solid var(--pea-purple-border);
-      padding: 2px 9px;
-      border-radius: 999px;
-    }
-
-    .org-parent-text {
-      font-size: 12.5px;
-      font-weight: 500;
-      color: var(--text-muted);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
     }
 
     .org-main-name {
-      font-size: 20px;
-      font-weight: 700;
-      color: var(--text-primary);
-      letter-spacing: -0.2px;
+      font-size: 12.5px;
+      font-weight: 400;
+      color: var(--text-secondary);
       line-height: 1.3;
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
     }
 
-    .org-sub-name {
-      font-size: 13px;
-      color: var(--text-secondary);
-      line-height: 1.4;
-    }
-
     /* Header Right Controls */
     .header-meta {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 8px;
       flex-shrink: 0;
     }
 
     .clock-pill {
-      display: flex;
+      display: inline-flex;
       align-items: center;
-      gap: 8px;
-      background: var(--bg-subtle);
-      border: 1px solid var(--border-color);
-      padding: 7px 14px;
+      gap: 7px;
+      padding: 5px 11px;
       border-radius: 999px;
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 400;
       color: var(--text-secondary);
       font-variant-numeric: tabular-nums;
     }
 
     .status-dot {
-      width: 8px;
-      height: 8px;
+      width: 6px;
+      height: 6px;
       border-radius: 50%;
       background-color: #10B981;
-      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.18);
+      box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.14);
     }
 
-    .theme-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      padding: 7px 12px;
-      border-radius: 999px;
-      font-size: 12.5px;
-      font-weight: 600;
-      color: var(--text-secondary);
-      cursor: pointer;
-      transition: all var(--transition);
-    }
-
-    .theme-btn:hover {
-      border-color: var(--border-hover);
-      background: var(--bg-subtle);
-      color: var(--text-primary);
-    }
-
-    /* ==================== MAIN CONTENT ==================== */
+    /* ==================== MAIN WORKSPACE ==================== */
     .main-wrapper {
       flex: 1;
-      max-width: 1240px;
+      max-width: 1140px;
       width: 100%;
       margin: 0 auto;
-      padding: 44px 28px 64px;
+      padding: 64px 28px 88px;
     }
 
-    /* Hero / Welcome Section */
+    /* Centered Hero & Command Search */
     .hero-section {
-      margin-bottom: 40px;
+      max-width: 640px;
+      margin: 0 auto 56px;
       display: flex;
-      flex-wrap: wrap;
-      align-items: flex-end;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
       gap: 24px;
-      padding-bottom: 28px;
-      border-bottom: 1px solid var(--border-color);
     }
 
     .hero-copy {
-      max-width: 740px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
     .hero-eyebrow {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-family: "Inter", "Sarabun", sans-serif;
-      font-size: 12px;
+      font-size: 11.5px;
       font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.8px;
       color: var(--pea-purple);
-      margin-bottom: 8px;
+      background: var(--pea-purple-light);
+      border: 1px solid var(--pea-purple-border);
+      padding: 4px 12px;
+      border-radius: 999px;
+      margin-bottom: 16px;
     }
 
     .hero-title {
-      font-size: 30px;
+      font-size: 34px;
       font-weight: 700;
       color: var(--text-primary);
-      letter-spacing: -0.4px;
-      line-height: 1.28;
+      letter-spacing: -0.025em;
+      line-height: 1.25;
       margin-bottom: 10px;
     }
 
     .hero-description {
-      font-size: 15.5px;
+      font-size: 14.5px;
+      font-weight: 400;
       color: var(--text-secondary);
       line-height: 1.65;
+      max-width: 540px;
     }
 
-    /* Quick Search / Filter Bar */
+    /* Central Pill Search Box */
     .hero-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      width: 100%;
+      max-width: 520px;
     }
 
     .quick-search-box {
       position: relative;
-      width: 280px;
+      width: 100%;
     }
 
     .quick-search-box svg {
       position: absolute;
-      left: 13px;
+      left: 18px;
       top: 50%;
       transform: translateY(-50%);
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       color: var(--text-muted);
       pointer-events: none;
+      transition: color var(--transition);
     }
 
     .quick-search-input {
       width: 100%;
-      padding: 10px 14px 10px 38px;
+      padding: 14px 20px 14px 48px;
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
       border-radius: 999px;
-      font-size: 13.5px;
+      font-size: 14px;
+      font-weight: 400;
       color: var(--text-primary);
-      box-shadow: var(--shadow-xs);
-      transition: border-color var(--transition), box-shadow var(--transition);
+      box-shadow: var(--shadow-search);
+      transition: all var(--transition);
+    }
+
+    .quick-search-input::placeholder {
+      color: var(--text-muted);
+    }
+
+    .quick-search-input:hover {
+      border-color: rgba(15, 23, 42, 0.14);
     }
 
     .quick-search-input:focus {
       outline: none;
       border-color: var(--pea-purple);
-      box-shadow: 0 0 0 3px var(--pea-purple-light);
+      box-shadow: var(--shadow-search-focus);
     }
 
-    /* ==================== PORTAL CARDS GRID ==================== */
+    .quick-search-box:focus-within svg {
+      color: var(--pea-purple);
+    }
+
+    /* ==================== SECTION HEADER ==================== */
     .section-label-row {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      margin-bottom: 18px;
-      gap: 12px;
+      margin-bottom: 16px;
+      padding: 0 2px;
     }
 
     .section-label {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text-secondary);
-      letter-spacing: 0.2px;
-      display: flex;
-      align-items: center;
-      gap: 8px;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
     }
 
     .section-count {
-      font-size: 12.5px;
+      font-size: 12px;
+      font-weight: 500;
       color: var(--text-muted);
     }
 
+    /* ==================== UNCLUTTERED BENTO CARDS ==================== */
     .portal-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 24px;
+      gap: 22px;
       align-items: stretch;
     }
 
@@ -412,27 +348,14 @@
       position: relative;
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
-      border-radius: var(--radius-xl);
+      border-radius: var(--radius-2xl);
       padding: 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      box-shadow: var(--shadow-sm);
+      box-shadow: var(--shadow-card);
       transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
-      overflow: hidden;
       text-align: left;
-    }
-
-    .portal-card::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 4px;
-      background: var(--card-accent, var(--pea-purple));
-      opacity: 0.9;
-      transition: height var(--transition);
     }
 
     .portal-card.is-interactive {
@@ -440,50 +363,48 @@
     }
 
     .portal-card.is-interactive:hover {
-      transform: translateY(-5px);
-      box-shadow: var(--shadow-lg);
-      border-color: var(--pea-purple-border);
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-hover);
+      border-color: var(--border-hover);
     }
 
     .portal-card.is-interactive:focus-visible {
-      outline: 3px solid var(--pea-purple);
-      outline-offset: 2px;
+      outline: 2px solid var(--pea-purple);
+      outline-offset: 3px;
     }
 
-    /* Card 3: Disabled / Coming Soon State */
+    /* Disabled / Coming Soon Card */
     .portal-card.is-disabled {
-      --card-accent: #94A3B8;
-      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%);
-      border-style: dashed;
-      border-color: #CBD5E1;
+      background: rgba(255, 255, 255, 0.65);
+      border: 1px dashed rgba(15, 23, 42, 0.12);
+      box-shadow: none;
       cursor: not-allowed;
       user-select: none;
-      opacity: 0.86;
     }
 
     .card-top {
       display: flex;
       flex-direction: column;
-      gap: 18px;
+      gap: 16px;
     }
 
     .card-header-row {
       display: flex;
-      align-items: flex-start;
+      align-items: center;
       justify-content: space-between;
       gap: 12px;
     }
 
+    /* App Launcher Squircle Icon */
     .card-icon-box {
-      width: 54px;
-      height: 54px;
-      border-radius: 14px;
+      width: 46px;
+      height: 46px;
+      border-radius: 13px;
       display: flex;
       align-items: center;
       justify-content: center;
       background: var(--icon-bg, var(--pea-purple-light));
       color: var(--icon-color, var(--pea-purple));
-      border: 1px solid var(--icon-border, rgba(107, 33, 168, 0.14));
       flex-shrink: 0;
       transition: transform var(--transition);
     }
@@ -492,21 +413,21 @@
       transform: scale(1.05);
     }
 
+    /* Ultra-Clean Dot Status Badge */
     .card-status-badge {
       display: inline-flex;
       align-items: center;
       gap: 6px;
-      font-size: 12px;
-      font-weight: 600;
-      padding: 4px 11px;
+      font-size: 11.5px;
+      font-weight: 500;
+      padding: 3px 9px;
       border-radius: 999px;
       white-space: nowrap;
     }
 
     .badge-active {
-      background: #ECFDF5;
-      color: #047857;
-      border: 1px solid #A7F3D0;
+      color: #059669;
+      background: rgba(16, 185, 129, 0.08);
     }
 
     .badge-active .pulse-dot {
@@ -517,111 +438,128 @@
     }
 
     .badge-coming-soon {
-      background: #FEF3C7;
       color: #B45309;
-      border: 1px solid #FDE68A;
+      background: rgba(245, 158, 11, 0.1);
     }
 
+    /* Title & Description Hierarchy */
     .card-category {
-      font-family: "Inter", "Sarabun", sans-serif;
-      font-size: 11.5px;
+      font-size: 10.5px;
       font-weight: 600;
       text-transform: uppercase;
-      letter-spacing: 0.6px;
+      letter-spacing: 0.06em;
       color: var(--text-muted);
       margin-bottom: 4px;
     }
 
     .card-title {
-      font-size: 20px;
-      font-weight: 700;
+      font-size: 18px;
+      font-weight: 600;
       color: var(--text-primary);
-      line-height: 1.32;
-      margin-bottom: 8px;
+      letter-spacing: -0.015em;
+      line-height: 1.35;
+      margin-bottom: 6px;
     }
 
     .card-desc {
-      font-size: 14.5px;
+      font-size: 13.5px;
+      font-weight: 400;
       color: var(--text-secondary);
       line-height: 1.6;
     }
 
-    /* Feature Pills inside Card */
-    .card-feature-list {
+    /* Compact, Uncluttered Metadata & Feature Specs */
+    .card-specs-group {
+      margin-top: 4px;
+      padding-top: 14px;
+      border-top: 1px solid var(--border-hairline);
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-      margin-top: 18px;
-      padding-top: 16px;
-      border-top: 1px solid var(--bg-subtle);
+      flex-direction: column;
+      gap: 8px;
     }
 
-    .feature-tag {
-      font-size: 12px;
-      font-weight: 500;
-      color: var(--text-secondary);
-      background: var(--bg-subtle);
-      padding: 4px 10px;
-      border-radius: 6px;
-    }
-
-    /* Live Metric Strip inside Card */
     .card-metric-box {
-      margin-top: 14px;
-      background: var(--bg-page);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-md);
-      padding: 10px 14px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 10px;
-      font-size: 12.5px;
+      gap: 8px;
+      font-size: 12px;
+      line-height: 1.4;
     }
 
     .metric-label {
-      color: var(--text-secondary);
-      display: flex;
+      color: var(--text-muted);
+      display: inline-flex;
       align-items: center;
-      gap: 6px;
+      gap: 5px;
+      font-weight: 400;
     }
 
     .metric-value {
-      font-weight: 700;
+      font-weight: 600;
       color: var(--text-primary);
       font-variant-numeric: tabular-nums;
     }
 
+    /* Clean Dot-Separated Feature List */
+    .card-feature-list {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 4px 0;
+    }
+
+    .feature-tag {
+      font-size: 11.5px;
+      font-weight: 400;
+      color: var(--text-muted);
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .feature-tag:not(:last-child)::after {
+      content: "·";
+      margin: 0 7px;
+      color: #CBD5E1;
+      font-weight: 700;
+    }
+
     /* Card Footer Actions */
     .card-footer {
-      margin-top: 24px;
-      padding-top: 16px;
-      border-top: 1px solid var(--border-color);
+      margin-top: 22px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 10px;
+      gap: 8px;
     }
 
     .card-primary-btn {
       flex: 1;
       display: inline-flex;
       align-items: center;
-      justify-content: center;
+      justify-content: space-between;
       gap: 8px;
-      padding: 10px 16px;
+      padding: 10px 15px;
       border-radius: var(--radius-md);
-      font-size: 14px;
-      font-weight: 600;
+      font-size: 13px;
+      font-weight: 500;
       border: 1px solid transparent;
-      background: var(--btn-bg, var(--pea-purple));
-      color: #FFFFFF;
+      background: var(--bg-subtle);
+      color: var(--text-primary);
       cursor: pointer;
-      transition: background var(--transition), transform var(--transition);
+      transition: all var(--transition);
     }
 
-    .card-primary-btn:hover {
-      background: var(--btn-hover, var(--pea-purple-dark));
+    .portal-card.is-interactive:hover .card-primary-btn {
+      background: var(--pea-purple);
+      color: #FFFFFF;
+    }
+
+    .card-primary-btn svg {
+      transition: transform var(--transition);
+    }
+
+    .portal-card.is-interactive:hover .card-primary-btn svg {
+      transform: translateX(3px);
     }
 
     .card-secondary-btn {
@@ -629,20 +567,21 @@
       align-items: center;
       justify-content: center;
       gap: 6px;
-      padding: 10px 13px;
+      padding: 10px 14px;
       border-radius: var(--radius-md);
-      font-size: 13px;
-      font-weight: 600;
+      font-size: 12.5px;
+      font-weight: 500;
       border: 1px solid var(--border-color);
       background: var(--bg-surface);
-      color: var(--text-primary);
+      color: var(--text-secondary);
       cursor: pointer;
       transition: all var(--transition);
     }
 
     .card-secondary-btn:hover {
       background: var(--bg-subtle);
-      border-color: var(--border-hover);
+      color: var(--text-primary);
+      border-color: rgba(15, 23, 42, 0.15);
     }
 
     .card-disabled-btn {
@@ -650,99 +589,49 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 10px 16px;
+      gap: 7px;
+      padding: 10px 15px;
       border-radius: var(--radius-md);
-      font-size: 13.5px;
-      font-weight: 600;
-      background: #F1F5F9;
-      color: #64748B;
-      border: 1px solid #E2E8F0;
+      font-size: 12.5px;
+      font-weight: 500;
+      background: var(--bg-muted-pill);
+      color: var(--text-muted);
+      border: 1px solid transparent;
       cursor: not-allowed;
     }
 
-    /* ==================== ARCHITECTURE & QUICK INFO BAR ==================== */
-    .info-strip {
-      margin-top: 40px;
-      background: var(--bg-surface);
-      border: 1px solid var(--border-color);
-      border-radius: var(--radius-lg);
-      padding: 20px 24px;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      box-shadow: var(--shadow-xs);
-    }
-
-    .info-strip-left {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .info-badge-icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      background: var(--navy-soft);
-      color: var(--navy-primary);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .info-strip-title {
-      font-size: 14.5px;
-      font-weight: 700;
-      color: var(--text-primary);
-    }
-
-    .info-strip-sub {
-      font-size: 13px;
-      color: var(--text-secondary);
-    }
-
-    .info-strip-actions {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-    }
-
-    /* ==================== FOOTER ==================== */
+    /* ==================== MINIMALIST FOOTER ==================== */
     .site-footer {
-      border-top: 1px solid var(--border-color);
-      background: var(--bg-surface);
+      border-top: 1px solid var(--border-hairline);
+      background: transparent;
       padding: 24px 28px;
       margin-top: auto;
     }
 
     .footer-inner {
-      max-width: 1240px;
+      max-width: 1140px;
       margin: 0 auto;
       display: flex;
       flex-wrap: wrap;
       align-items: center;
       justify-content: space-between;
       gap: 12px;
-      font-size: 13px;
+      font-size: 12px;
       color: var(--text-muted);
     }
 
     .footer-org {
-      font-weight: 600;
+      font-weight: 500;
       color: var(--text-secondary);
     }
 
-    /* ==================== MODAL (SETTINGS & PREVIEW) ==================== */
+    /* ==================== MODAL (CLEAN GLASS DIALOG) ==================== */
     .modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(15, 23, 42, 0.48);
-      backdrop-filter: blur(4px);
+      background: rgba(9, 13, 22, 0.35);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       display: none;
       align-items: center;
       justify-content: center;
@@ -757,22 +646,22 @@
     .modal-dialog {
       background: var(--bg-surface);
       border: 1px solid var(--border-color);
-      border-radius: var(--radius-xl);
+      border-radius: var(--radius-2xl);
       width: 100%;
-      max-width: 580px;
-      box-shadow: 0 24px 48px rgba(15, 23, 42, 0.22);
+      max-width: 520px;
+      box-shadow: 0 32px 64px -12px rgba(15, 23, 42, 0.18);
       overflow: hidden;
-      animation: modalFadeIn 0.2s ease-out;
+      animation: modalFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1);
     }
 
     @keyframes modalFadeIn {
-      from { opacity: 0; transform: translateY(8px) scale(0.99); }
+      from { opacity: 0; transform: translateY(8px) scale(0.98); }
       to { opacity: 1; transform: translateY(0) scale(1); }
     }
 
     .modal-header {
-      padding: 18px 24px;
-      border-bottom: 1px solid var(--border-color);
+      padding: 20px 26px 16px;
+      border-bottom: 1px solid var(--border-hairline);
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -780,20 +669,25 @@
     }
 
     .modal-header h3 {
-      font-size: 17px;
-      font-weight: 700;
+      font-size: 15.5px;
+      font-weight: 600;
       color: var(--text-primary);
     }
 
     .modal-close {
       background: none;
       border: none;
-      font-size: 22px;
+      width: 30px;
+      height: 30px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 19px;
       line-height: 1;
       color: var(--text-muted);
       cursor: pointer;
-      padding: 4px;
-      border-radius: 6px;
+      border-radius: 999px;
+      transition: all var(--transition);
     }
 
     .modal-close:hover {
@@ -802,10 +696,10 @@
     }
 
     .modal-body {
-      padding: 22px 24px;
+      padding: 22px 26px;
       max-height: 72vh;
       overflow-y: auto;
-      font-size: 14px;
+      font-size: 13.5px;
       color: var(--text-secondary);
     }
 
@@ -813,9 +707,13 @@
       margin-bottom: 16px;
     }
 
+    .form-group:last-child {
+      margin-bottom: 0;
+    }
+
     .form-group label {
       display: block;
-      font-size: 13px;
+      font-size: 12.5px;
       font-weight: 600;
       color: var(--text-primary);
       margin-bottom: 6px;
@@ -823,35 +721,47 @@
 
     .form-group input {
       width: 100%;
-      padding: 9px 12px;
+      padding: 9px 13px;
+      background: var(--bg-page);
       border: 1px solid var(--border-color);
       border-radius: var(--radius-sm);
-      font-size: 13.5px;
+      font-size: 13px;
       color: var(--text-primary);
+      transition: all var(--transition);
     }
 
     .form-group input:focus {
       outline: none;
+      background: var(--bg-surface);
       border-color: var(--pea-purple);
       box-shadow: 0 0 0 3px var(--pea-purple-light);
     }
 
     .form-hint {
-      font-size: 12px;
+      font-size: 11.5px;
       color: var(--text-muted);
       margin-top: 4px;
     }
 
     .modal-footer {
-      padding: 14px 24px;
-      border-top: 1px solid var(--border-color);
+      padding: 14px 26px;
+      border-top: 1px solid var(--border-hairline);
       background: var(--bg-page);
       display: flex;
       justify-content: flex-end;
-      gap: 10px;
+      gap: 8px;
     }
 
-    /* Toast Notification */
+    .modal-footer .card-primary-btn {
+      background: var(--pea-purple);
+      color: #FFFFFF;
+    }
+
+    .modal-footer .card-primary-btn:hover {
+      background: var(--pea-purple-dark);
+    }
+
+    /* Minimal Pill Toast Notification */
     .toast-container {
       position: fixed;
       bottom: 24px;
@@ -863,16 +773,17 @@
     }
 
     .toast-item {
-      background: var(--navy-primary);
+      background: rgba(9, 13, 22, 0.92);
+      backdrop-filter: blur(10px);
       color: #FFFFFF;
-      padding: 12px 18px;
-      border-radius: var(--radius-md);
-      font-size: 13.5px;
+      padding: 11px 18px;
+      border-radius: 999px;
+      font-size: 12.5px;
       font-weight: 500;
-      box-shadow: var(--shadow-md);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.18);
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 8px;
     }
 
     /* ==================== RESPONSIVE DESIGN ==================== */
@@ -884,13 +795,12 @@
 
     @media (max-width: 768px) {
       .header-container {
-        padding: 14px 18px;
+        padding: 12px 18px;
         flex-direction: column;
         align-items: flex-start;
       }
 
       .org-main-name {
-        font-size: 17px;
         white-space: normal;
       }
 
@@ -900,33 +810,24 @@
       }
 
       .main-wrapper {
-        padding: 28px 18px 48px;
+        padding: 40px 18px 60px;
+      }
+
+      .hero-section {
+        margin-bottom: 40px;
       }
 
       .hero-title {
-        font-size: 24px;
-      }
-
-      .hero-actions {
-        width: 100%;
-      }
-
-      .quick-search-box {
-        width: 100%;
+        font-size: 26px;
       }
 
       .portal-grid {
         grid-template-columns: 1fr;
-        gap: 18px;
+        gap: 16px;
       }
 
       .portal-card {
         padding: 22px;
-      }
-
-      .info-strip {
-        flex-direction: column;
-        align-items: flex-start;
       }
     }
   </style>
@@ -935,28 +836,20 @@
   <!-- แถบสีเอกลักษณ์องค์กรด้านบนสุด -->
   <div class="top-brand-strip"></div>
 
-  <!-- ส่วนหัวเว็บไซต์ (Enterprise Header) -->
+  <!-- ส่วนหัวเว็บไซต์ (Minimalist Enterprise Header) -->
   <header class="site-header">
     <div class="header-container">
       <div class="brand-identity">
-        <!-- โลโก้หน่วยงาน (Placeholder พร้อมรองรับการอัปโหลดเปลี่ยนโลโก้จริง) -->
-        <button type="button" class="logo-placeholder" id="logoPlaceholderBtn" title="คลิกเพื่อตั้งค่าหรือเปลี่ยนโลโก้หน่วยงาน">
-          <img id="customLogoImg" alt="โลโก้หน่วยงาน ผอส. กฟฉ.2" />
-          <div class="logo-fallback-svg">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"></path>
-            </svg>
-            <span>PEA NE2</span>
-          </div>
-        </button>
+        <!-- โลโก้หน่วยงานแบบตายตัว ไม่สามารถกดเปลี่ยนได้ -->
+        <div class="logo-container" title="โลโก้หน่วยงาน การไฟฟ้าส่วนภูมิภาค">
+          <img src="logo.webp" alt="โลโก้หน่วยงาน การไฟฟ้าส่วนภูมิภาค" />
+        </div>
 
         <div class="org-titles">
           <div class="org-badge-row">
-            <span class="org-code-pill">ผอส. กสฟ.ฉ.2</span>
-            <span class="org-parent-text">การไฟฟ้าส่วนภูมิภาค เขต 2 (ภาคตะวันออกเฉียงเหนือ) จ.อุบลราชธานี</span>
+            <span class="org-code-pill">กฟฉ.2</span>
           </div>
-          <h1 class="org-main-name">แผนกอุปกรณ์เชื่อมต่อโครงข่ายสื่อสาร (ผอส.) กฟฉ.2</h1>
-          <p class="org-sub-name">กองบำรุงรักษาสถานีไฟฟ้า • Communication Network Equipment Section</p>
+          <h1 class="org-main-name">แผนกอุปกรณ์เชื่อมต่อโครงข่ายสื่อสาร (ผอส.)</h1>
         </div>
       </div>
 
@@ -965,34 +858,27 @@
           <span class="status-dot"></span>
           <span id="liveClockText">ระบบพร้อมใช้งาน</span>
         </div>
-        <button type="button" class="theme-btn" id="themeSwitchBtn" title="สลับโทนสี PEA Purple / Enterprise Navy">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="5"></circle>
-            <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"></path>
-          </svg>
-          <span id="themeSwitchLabel">โทนสีม่วง กฟภ.</span>
-        </button>
       </div>
     </div>
   </header>
 
-  <!-- เนื้อหาหลัก (Main Content) -->
+  <!-- เนื้อหาหลัก (Spacious Centered Portal) -->
   <main class="main-wrapper">
-    <!-- Hero Section -->
+    <!-- Centered Hero & Search Section -->
     <section class="hero-section">
       <div class="hero-copy">
         <div class="hero-eyebrow">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-            <rect x="3" y="3" width="7" height="7" rx="1"></rect>
-            <rect x="14" y="3" width="7" height="7" rx="1"></rect>
-            <rect x="14" y="14" width="7" height="7" rx="1"></rect>
-            <rect x="3" y="14" width="7" height="7" rx="1"></rect>
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <rect x="3" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="3" width="7" height="7" rx="1.5"></rect>
+            <rect x="14" y="14" width="7" height="7" rx="1.5"></rect>
+            <rect x="3" y="14" width="7" height="7" rx="1.5"></rect>
           </svg>
-          <span>Enterprise Operations Portal</span>
+          <span>แผนกอุปกรณ์เชื่อมต่อโครงข่ายสื่อสาร (ผอส.) • กฟฉ.2</span>
         </div>
-        <h2 class="hero-title">ศูนย์รวมระบบงานดิจิทัลและสารสนเทศ ผอส. กฟฉ.2</h2>
+        <h2 class="hero-title">พื้นที่ทำงาน (Workspace)</h2>
         <p class="hero-description">
-          เข้าถึงระบบบริหารงานจัดซื้อจัดจ้าง ระบบติดตามความพร้อมใช้งานอุปกรณ์โครงข่ายสื่อสาร SCADA (%AVA) และระบบงานบริการวิศวกรรมของแผนกอุปกรณ์เชื่อมต่อโครงข่ายสื่อสารได้จากหน้าเดียว
+          เลือกระบบที่คุณต้องการเข้าถึง — ศูนย์รวมระบบงานจัดซื้อจัดจ้าง แผนที่โครงข่ายและแดชบอร์ดความพร้อมใช้งาน SCADA (%AVA) และระบบงานบริการวิศวกรรม ผอส. กฟฉ.2
         </p>
       </div>
 
@@ -1002,7 +888,7 @@
             <circle cx="11" cy="11" r="8"></circle>
             <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
           </svg>
-          <input type="search" id="portalSearchInput" class="quick-search-input" placeholder="ค้นหาระบบงาน หรือฟังก์ชัน..." aria-label="ค้นหาระบบงาน" />
+          <input type="search" id="portalSearchInput" class="quick-search-input" placeholder="ค้นหาระบบงาน เช่น จัดซื้อจัดจ้าง, Dashboard AVA, แผนที่ SCADA..." aria-label="ค้นหาระบบงาน" />
         </div>
       </div>
     </section>
@@ -1015,20 +901,18 @@
       <div class="section-count" id="visibleCardCount">แสดง 3 ระบบงาน</div>
     </div>
 
-    <!-- เมนูหลัก 3 Cards ตามข้อกำหนด Design System -->
+    <!-- เมนูหลัก 3 Cards สไตล์ World-Class Minimal Bento -->
     <section class="portal-grid" id="portalGrid" aria-label="เมนูระบบงานหลัก">
 
       <!-- ==================== CARD 1: ระบบจัดซื้อจัดจ้าง (Procurement) ==================== -->
-      <article class="portal-card is-interactive" id="cardProcurement" tabindex="0" role="button" aria-label="เปิดระบบจัดซื้อจัดจ้าง (Procurement)" data-keywords="จัดซื้อจัดจ้าง procurement pr po ตรวจรับ เบิกจ่าย งบทำการ wbs supabase" style="--card-accent: var(--navy-primary); --icon-bg: var(--navy-soft); --icon-color: var(--navy-primary); --btn-bg: var(--navy-primary); --btn-hover: var(--navy-hover);">
+      <article class="portal-card is-interactive" id="cardProcurement" tabindex="0" role="button" aria-label="เปิดระบบจัดซื้อจัดจ้าง (Procurement)" data-keywords="จัดซื้อจัดจ้าง procurement pr po ตรวจรับ เบิกจ่าย งบทำการ wbs supabase" style="--icon-bg: #F3E8FF; --icon-color: var(--pea-purple);">
         <div class="card-top">
           <div class="card-header-row">
             <div class="card-icon-box">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
-                <polyline points="14 2 14 8 20 8"></polyline>
-                <line x1="16" y1="13" x2="8" y2="13"></line>
-                <line x1="16" y1="17" x2="8" y2="17"></line>
-                <line x1="10" y1="9" x2="8" y2="9"></line>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="9" cy="21" r="1"></circle>
+                <circle cx="20" cy="21" r="1"></circle>
+                <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
               </svg>
             </div>
             <span class="card-status-badge badge-active">
@@ -1039,35 +923,37 @@
 
           <div>
             <div class="card-category">Procurement &amp; Workflow</div>
-            <h3 class="card-title">ระบบจัดซื้อจัดจ้าง (Procurement)</h3>
+            <h3 class="card-title">ระบบจัดซื้อจัดจ้าง</h3>
             <p class="card-desc">
-              ระบบบริหารและติดตามงานจัดซื้อ/จ้างซ่อมครบวงจร ตั้งแต่รายงานขอซื้อ/ขอจ้าง ต่อรองราคา รายงานผล PR ส่งมอบ ตรวจรับ จนถึงใบสำคัญจ่าย
+              จัดการเอกสาร ติดตามสถานะ และบันทึกข้อมูลการจัดซื้อจัดจ้างของแผนก ตั้งแต่ขอซื้อ/ขอจ้าง PR ตรวจรับ จนถึงใบสำคัญจ่าย
             </p>
           </div>
 
-          <div class="card-metric-box">
-            <span class="metric-label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
-                <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
-                <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
-              </svg>
-              <span>ฐานข้อมูล Cloud Supabase</span>
-            </span>
-            <span class="metric-value" id="procMetricText">8 ขั้นตอนมาตรฐาน</span>
-          </div>
+          <div class="card-specs-group">
+            <div class="card-metric-box">
+              <span class="metric-label">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <ellipse cx="12" cy="5" rx="9" ry="3"></ellipse>
+                  <path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"></path>
+                  <path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"></path>
+                </svg>
+                <span>Cloud Supabase</span>
+              </span>
+              <span class="metric-value" id="procMetricText">8 ขั้นตอนมาตรฐาน</span>
+            </div>
 
-          <div class="card-feature-list">
-            <span class="feature-tag">รายงานขอซื้อ/ขอจ้าง A4</span>
-            <span class="feature-tag">ใบขอเสนอซื้อ (PR)</span>
-            <span class="feature-tag">รายงานตรวจรับ &amp; ใบสำคัญจ่าย</span>
+            <div class="card-feature-list">
+              <span class="feature-tag">รายงานขอซื้อ/ขอจ้าง A4</span>
+              <span class="feature-tag">ใบขอเสนอซื้อ (PR)</span>
+              <span class="feature-tag">ตรวจรับ &amp; ใบสำคัญจ่าย</span>
+            </div>
           </div>
         </div>
 
         <div class="card-footer">
           <button type="button" class="card-primary-btn" id="btnOpenProcurement">
             <span>เข้าสู่ระบบจัดซื้อจัดจ้าง</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
@@ -1076,14 +962,14 @@
       </article>
 
       <!-- ==================== CARD 2: Dashboard AVA & Maps ==================== -->
-      <article class="portal-card is-interactive" id="cardScadaMap" tabindex="0" role="button" aria-label="เปิดระบบ Dashboard AVA และแผนที่ SCADA" data-keywords="dashboard ava maps scada แผนที่ แดชบอร์ด ความพร้อมใช้งาน frtu router dau พิกัด" style="--card-accent: var(--pea-purple); --icon-bg: var(--pea-purple-light); --icon-color: var(--pea-purple); --btn-bg: var(--pea-purple); --btn-hover: var(--pea-purple-dark);">
+      <article class="portal-card is-interactive" id="cardScadaMap" tabindex="0" role="button" aria-label="เปิดระบบ Dashboard AVA และแผนที่ SCADA" data-keywords="dashboard ava maps scada แผนที่ แดชบอร์ด ความพร้อมใช้งาน frtu router dau พิกัด" style="--icon-bg: #FEF3C7; --icon-color: #D97706;">
         <div class="card-top">
           <div class="card-header-row">
             <div class="card-icon-box">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
-                <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
-                <line x1="8" y1="2" x2="8" y2="18"></line>
-                <line x1="16" y1="6" x2="16" y2="22"></line>
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="20" x2="18" y2="10"></line>
+                <line x1="12" y1="20" x2="12" y2="4"></line>
+                <line x1="6" y1="20" x2="6" y2="14"></line>
               </svg>
             </div>
             <span class="card-status-badge badge-active">
@@ -1096,31 +982,33 @@
             <div class="card-category">SCADA Network &amp; GIS Monitoring</div>
             <h3 class="card-title">Dashboard AVA &amp; Maps</h3>
             <p class="card-desc">
-              ระบบแผนที่พิกัดสถานีและแดชบอร์ดความพร้อมใช้งานอุปกรณ์ในระบบ SCADA NE2 (%AVA) แยกตามชนิดอุปกรณ์ ผลิตภัณฑ์สื่อสาร และการไฟฟ้าสังกัด
+              ระบบติดตามสถานะ แผนที่โครงข่าย และรายงานผลความพร้อมใช้งานอุปกรณ์สื่อสารในระบบ SCADA NE2 (%AVA)
             </p>
           </div>
 
-          <div class="card-metric-box">
-            <span class="metric-label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-              </svg>
-              <span>สถานะความพร้อมใช้งาน (%AVA)</span>
-            </span>
-            <span class="metric-value" id="scadaMetricText">GIS Map &amp; Analytics</span>
-          </div>
+          <div class="card-specs-group">
+            <div class="card-metric-box">
+              <span class="metric-label">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
+                </svg>
+                <span>สถานะความพร้อมใช้งาน (%AVA)</span>
+              </span>
+              <span class="metric-value" id="scadaMetricText">GIS Map &amp; Analytics</span>
+            </div>
 
-          <div class="card-feature-list">
-            <span class="feature-tag">แผนที่พิกัดอุปกรณ์ SCADA</span>
-            <span class="feature-tag">แดชบอร์ด %AVA</span>
-            <span class="feature-tag">สรุปรายงานวิศวกรรม AI</span>
+            <div class="card-feature-list">
+              <span class="feature-tag">แผนที่พิกัดอุปกรณ์ SCADA</span>
+              <span class="feature-tag">แดชบอร์ด %AVA</span>
+              <span class="feature-tag">สรุปรายงานวิศวกรรม AI</span>
+            </div>
           </div>
         </div>
 
         <div class="card-footer">
           <button type="button" class="card-primary-btn" id="btnOpenScadaMap">
             <span>เปิดแผนที่ SCADA</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <line x1="5" y1="12" x2="19" y2="12"></line>
               <polyline points="12 5 19 12 12 19"></polyline>
             </svg>
@@ -1135,17 +1023,14 @@
       <article class="portal-card is-disabled" id="cardRepairService" aria-disabled="true" data-keywords="แจ้งปัญหา แจ้งซ่อม ticket ขัดข้อง ซ่อมบำรุง coming soon โปรเจคถัดไป">
         <div class="card-top">
           <div class="card-header-row">
-            <div class="card-icon-box" style="--icon-bg: #F1F5F9; --icon-color: #64748B; --icon-border: #E2E8F0;">
-              <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">
+            <div class="card-icon-box" style="--icon-bg: #F3F4F6; --icon-color: #9CA3AF;">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
                 <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"></path>
               </svg>
             </div>
             <span class="card-status-badge badge-coming-soon">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-              <span>Coming Soon • โปรเจคถัดไป</span>
+              <span class="pulse-dot" style="width:6px;height:6px;border-radius:50%;background:#F59E0B;"></span>
+              <span>เร็วๆ นี้ • Coming Soon</span>
             </span>
           </div>
 
@@ -1153,31 +1038,33 @@
             <div class="card-category">Service Desk &amp; Maintenance</div>
             <h3 class="card-title">ระบบแจ้งปัญหา / แจ้งซ่อม</h3>
             <p class="card-desc">
-              ระบบรับแจ้งเหตุขัดข้องและติดตามงานซ่อมบำรุงอุปกรณ์เชื่อมต่อโครงข่ายสื่อสาร (Cellular Router, DAU, Fiber Optic และอุปกรณ์ประกอบ)
+              ระบบแจ้งแก้ไขปัญหาอุปกรณ์และโครงข่ายสื่อสาร ติดตามงานซ่อมบำรุง (กำลังพัฒนาระบบหลังบ้าน)
             </p>
           </div>
 
-          <div class="card-metric-box">
-            <span class="metric-label">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M12 20h9"></path>
-                <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
-              </svg>
-              <span>สถานะการพัฒนา</span>
-            </span>
-            <span class="metric-value" style="color: #B45309;">อยู่ระหว่างเตรียมโครงการ</span>
-          </div>
+          <div class="card-specs-group">
+            <div class="card-metric-box">
+              <span class="metric-label">
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M12 20h9"></path>
+                  <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                </svg>
+                <span>สถานะการพัฒนา</span>
+              </span>
+              <span class="metric-value" style="color: #B45309;">อยู่ระหว่างเตรียมโครงการ</span>
+            </div>
 
-          <div class="card-feature-list">
-            <span class="feature-tag">รับแจ้งเหตุออนไลน์</span>
-            <span class="feature-tag">ติดตามสถานะงานซ่อม</span>
-            <span class="feature-tag">ประวัติการบำรุงรักษา</span>
+            <div class="card-feature-list">
+              <span class="feature-tag">รับแจ้งเหตุออนไลน์</span>
+              <span class="feature-tag">ติดตามสถานะงานซ่อม</span>
+              <span class="feature-tag">ประวัติการบำรุงรักษา</span>
+            </div>
           </div>
         </div>
 
         <div class="card-footer">
           <button type="button" class="card-disabled-btn" disabled aria-disabled="true">
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
               <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
               <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
             </svg>
@@ -1188,24 +1075,15 @@
 
     </section>
 
-    <!-- แถบตั้งค่าลิงก์และโลโก้สำหรับผู้ดูแลระบบ -->
-    <section class="info-strip" aria-label="การตั้งค่าลิงก์ระบบ">
+    <section class="info-strip" aria-label="การตั้งค่าลิงก์ระบบ" style="display: none;" hidden>
       <div class="info-strip-left">
-        <div class="info-badge-icon">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <circle cx="12" cy="12" r="3"></circle>
-            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
-          </svg>
-        </div>
         <div>
-          <div class="info-strip-title">การเชื่อมโยงไฟล์ระบบ (Target Links: <span id="currentTargetSummary">procurement.html • map.html • dashboard.html</span>)</div>
-          <div class="info-strip-sub">รองรับทั้งการวางไฟล์ร่วมกันบน GitHub Pages (`scada-neb-map`) และการเชื่อมต่อไปยัง Render (`scada-web-app`)</div>
+          <div class="info-strip-title"><span id="currentTargetSummary">procurement.html • map.html • dashboard.html</span></div>
         </div>
       </div>
-
       <div class="info-strip-actions">
         <button type="button" class="card-secondary-btn" id="openConfigModalBtn">
-          <span>ตั้งค่าลิงก์ &amp; โลโก้หน่วยงาน</span>
+          <span>ตั้งค่าลิงก์ระบบ</span>
         </button>
       </div>
     </section>
@@ -1215,43 +1093,37 @@
   <footer class="site-footer">
     <div class="footer-inner">
       <div>
-        <span class="footer-org">แผนกอุปกรณ์เชื่อมต่อโครงข่ายสื่อสาร (ผอส.) กองบำรุงรักษาสถานีไฟฟ้า (กสฟ.ฉ.2)</span>
+        <span class="footer-org">แผนกอุปกรณ์เชื่อมต่อโครงข่ายสื่อสาร (ผอส.) กฟฉ.2</span>
         <span> • การไฟฟ้าส่วนภูมิภาค เขต 2 (ภาคตะวันออกเฉียงเหนือ) จ.อุบลราชธานี</span>
       </div>
       <div>โทร. 045-242434-6 ต่อ (22)10675</div>
     </div>
   </footer>
 
-  <!-- Modal ตั้งค่าลิงก์และโลโก้ -->
+  <!-- Modal ตั้งค่าลิงก์ -->
   <div class="modal-backdrop" id="configModal" role="dialog" aria-modal="true" aria-labelledby="configModalTitle">
     <div class="modal-dialog">
       <div class="modal-header">
-        <h3 id="configModalTitle">ตั้งค่าลิงก์ปลายทาง &amp; โลโก้หน่วยงาน</h3>
+        <h3 id="configModalTitle">ตั้งค่าลิงก์ปลายทาง</h3>
         <button type="button" class="modal-close" id="closeConfigModalBtn" aria-label="ปิดหน้าต่าง">&times;</button>
       </div>
       <div class="modal-body">
         <div class="form-group">
           <label for="cfgProcurementUrl">1. ลิงก์ระบบจัดซื้อจัดจ้าง (Card 1)</label>
           <input type="text" id="cfgProcurementUrl" />
-          <div class="form-hint">ค่าเริ่มต้น: <code>procurement.html</code> (วางไฟล์ไว้โฟลเดอร์เดียวกับ Portal โดยไม่ต้องแก้โค้ด)</div>
+          <div class="form-hint">ค่าเริ่มต้น: <code>procurement.html</code></div>
         </div>
 
         <div class="form-group">
           <label for="cfgMapUrl">2. ลิงก์ระบบแผนที่ SCADA (Card 2 — ปุ่มหลัก)</label>
           <input type="text" id="cfgMapUrl" />
-          <div class="form-hint">ค่าเริ่มต้นสำหรับ GitHub Pages: <code>map.html</code> (หรือใส่ URL ของ Render ได้หากต้องการลิงก์ข้ามระบบ)</div>
+          <div class="form-hint">ค่าเริ่มต้น: <code>map.html</code></div>
         </div>
 
         <div class="form-group">
           <label for="cfgDashUrl">3. ลิงก์หน้าแดชบอร์ด %AVA (Card 2 — ปุ่มรอง)</label>
           <input type="text" id="cfgDashUrl" />
-          <div class="form-hint">ค่าเริ่มต้นสำหรับ GitHub Pages: <code>dashboard.html</code> (หรือ <code>/dashboard</code> บน Render)</div>
-        </div>
-
-        <div class="form-group">
-          <label for="cfgLogoFile">4. อัปโหลดโลโก้หน่วยงาน (แทนที่ Placeholder)</label>
-          <input type="file" id="cfgLogoFile" accept="image/*" />
-          <div class="form-hint">รองรับไฟล์ PNG, JPG, SVG (บันทึกไว้ในเบราว์เซอร์อัตโนมัติ)</div>
+          <div class="form-hint">ค่าเริ่มต้น: <code>dashboard.html</code></div>
         </div>
       </div>
       <div class="modal-footer">
@@ -1266,13 +1138,11 @@
 
   <script>
     (function () {
-      var STORAGE_KEY = "pea_ne2_pos_portal_cfg_v1";
+      var STORAGE_KEY = "pea_ne2_pos_portal_cfg_v2";
       var DEFAULT_CONFIG = {
         procurementUrl: ["procurement", "html"].join("."),
         mapUrl: ["map", "html"].join("."),
-        dashUrl: ["dashboard", "html"].join("."),
-        theme: "purple",
-        customLogoDataUrl: ""
+        dashUrl: ["dashboard", "html"].join(".")
       };
 
       function loadConfig() {
@@ -1312,27 +1182,7 @@
         }, 2600);
       }
 
-      /* Apply Theme & Custom Logo */
-      function applyVisualConfig() {
-        var isNavy = currentConfig.theme === "navy";
-        document.body.classList.toggle("theme-navy", isNavy);
-        var themeLbl = document.getElementById("themeSwitchLabel");
-        if (themeLbl) {
-          themeLbl.textContent = isNavy ? "โทนสีกรมท่า (Navy)" : "โทนสีม่วง กฟภ.";
-        }
-
-        var logoBtn = document.getElementById("logoPlaceholderBtn");
-        var logoImg = document.getElementById("customLogoImg");
-        if (logoBtn && logoImg) {
-          if (currentConfig.customLogoDataUrl) {
-            logoImg.src = currentConfig.customLogoDataUrl;
-            logoBtn.classList.add("has-custom-logo");
-          } else {
-            logoImg.removeAttribute("src");
-            logoBtn.classList.remove("has-custom-logo");
-          }
-        }
-
+      function updateUIConfig() {
         var summaryEl = document.getElementById("currentTargetSummary");
         if (summaryEl) {
           summaryEl.textContent =
@@ -1394,7 +1244,7 @@
               }
             })
             .catch(function () {
-              /* Static hosting mode (GitHub Pages): silent fallback */
+              /* Silent fallback */
             });
         }
       }
@@ -1478,24 +1328,12 @@
         });
       }
 
-      /* Theme Toggle */
-      var themeBtn = document.getElementById("themeSwitchBtn");
-      if (themeBtn) {
-        themeBtn.addEventListener("click", function () {
-          currentConfig.theme = currentConfig.theme === "navy" ? "purple" : "navy";
-          saveConfig(currentConfig);
-          applyVisualConfig();
-        });
-      }
-
       /* Settings Modal */
       var modal = document.getElementById("configModal");
       var openModalBtn = document.getElementById("openConfigModalBtn");
-      var logoPlaceholderBtn = document.getElementById("logoPlaceholderBtn");
       var closeModalBtn = document.getElementById("closeConfigModalBtn");
       var saveConfigBtn = document.getElementById("saveConfigBtn");
       var resetConfigBtn = document.getElementById("resetConfigBtn");
-      var logoInput = document.getElementById("cfgLogoFile");
 
       function openConfigModal() {
         document.getElementById("cfgProcurementUrl").value = currentConfig.procurementUrl;
@@ -1509,25 +1347,10 @@
       }
 
       if (openModalBtn) openModalBtn.addEventListener("click", openConfigModal);
-      if (logoPlaceholderBtn) logoPlaceholderBtn.addEventListener("click", openConfigModal);
       if (closeModalBtn) closeModalBtn.addEventListener("click", closeConfigModal);
       if (modal) {
         modal.addEventListener("click", function (e) {
           if (e.target === modal) closeConfigModal();
-        });
-      }
-
-      if (logoInput) {
-        logoInput.addEventListener("change", function (e) {
-          var file = e.target.files && e.target.files[0];
-          if (!file) return;
-          var reader = new FileReader();
-          reader.onload = function () {
-            currentConfig.customLogoDataUrl = String(reader.result || "");
-            applyVisualConfig();
-            showToast("โหลดโลโก้หน่วยงานเรียบร้อยแล้ว");
-          };
-          reader.readAsDataURL(file);
         });
       }
 
@@ -1537,7 +1360,7 @@
           currentConfig.mapUrl = document.getElementById("cfgMapUrl").value.trim() || DEFAULT_CONFIG.mapUrl;
           currentConfig.dashUrl = document.getElementById("cfgDashUrl").value.trim() || DEFAULT_CONFIG.dashUrl;
           saveConfig(currentConfig);
-          applyVisualConfig();
+          updateUIConfig();
           closeConfigModal();
           showToast("บันทึกการตั้งค่าลิงก์เรียบร้อยแล้ว");
         });
@@ -1547,13 +1370,13 @@
         resetConfigBtn.addEventListener("click", function () {
           currentConfig = Object.assign({}, DEFAULT_CONFIG);
           saveConfig(currentConfig);
-          applyVisualConfig();
+          updateUIConfig();
           closeConfigModal();
           showToast("คืนค่าเริ่มต้นเรียบร้อยแล้ว");
         });
       }
 
-      applyVisualConfig();
+      updateUIConfig();
       updateClock();
       setInterval(updateClock, 30000);
       hydrateLiveMetrics();
