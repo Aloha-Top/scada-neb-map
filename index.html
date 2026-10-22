@@ -1258,7 +1258,6 @@
       /* Navigate to Target System */
       function navigateToSystem(targetUrl, systemLabel) {
         if (!targetUrl) return;
-        // แสดงแค่ชื่อระบบ ไม่แสดงชื่อไฟล์แล้ว
         showToast("กำลังเปิด " + systemLabel);
         setTimeout(function () {
           window.location.assign(targetUrl);
@@ -1383,7 +1382,13 @@
         });
       }
 
-      /* ดักการกดย้อนกลับ (Back/Forward Cache) เพื่อล้างแจ้งเตือนที่ค้างอยู่ทิ้งทันที */
+      /* เคลียร์แจ้งเตือนตอนที่กำลังจะเปลี่ยนหน้า (ป้องกันการกระพริบแวบๆ ตอนกดย้อนกลับ) */
+      window.addEventListener("pagehide", function () {
+        var container = document.getElementById("toastContainer");
+        if (container) container.innerHTML = "";
+      });
+
+      /* เผื่อเหนียวไว้ตอนโหลดกลับมาแสดง (Bfcache) */
       window.addEventListener("pageshow", function (event) {
         if (event.persisted) {
           var container = document.getElementById("toastContainer");
